@@ -176,7 +176,7 @@ class BigCraftBot(commands.Bot):
                         return
                     break
 
-            await channel.send(SUNDAY_REMINDER_TEXT)
+            await channel.send(SUNDAY_REMINDER_TEXT, allowed_mentions=discord.AllowedMentions(everyone=True))
             logger.info("Еженедельное напоминание отправлено в канал %s", channel_id)
         except Exception:
             logger.exception("Ошибка в reminder_loop")
